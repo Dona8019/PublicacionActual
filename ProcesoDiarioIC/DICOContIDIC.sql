@@ -1,3 +1,12 @@
+SET DATEFIRST 7
+SET ANSI_NULLS OFF
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET LOCK_TIMEOUT -1
+SET QUOTED_IDENTIFIER OFF
+
+go
+
+if not exists (select * from sysobjects where id = object_id('dbo.DICOContIDIC') and type = 'U') 
 CREATE TABLE DICOContIDIC(
 	ID				INT			NULL,
 	Cuenta			VARCHAR(25)	NULL,
