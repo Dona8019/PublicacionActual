@@ -4,6 +4,7 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET LOCK_TIMEOUT -1
 SET QUOTED_IDENTIFIER OFF
 GO
+if not exists (select * from sysobjects where id = object_id('dbo.DICOCtasActualizar') and type = 'U') 
 CREATE TABLE DICOCtasActualizar(
 	ID			INT	IDENTITY(1,1)	NOT NULL,
 	Cuenta		VARCHAR(20)		  NOT NULL,
